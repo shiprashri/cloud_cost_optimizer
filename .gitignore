@@ -7,3 +7,4 @@ backend/optimizer.db
 __pycache__/
 *.pkl
 *.db
+backend/model/rf_model.joblib
