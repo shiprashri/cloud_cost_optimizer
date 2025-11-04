@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>💰 Cloud Cost Estimator</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cost_estimator.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <main class="page-wrapper">
+    <section class="container">
+      <div class="header-row">
+        <h1>💰 Cloud Cost Estimator</h1>
+        <p class="subtitle">Enter your cloud usage details to get an estimated cost.</p>
+
+        <!-- 🌗 Theme Toggle -->
+        <button id="themeToggle" class="theme-toggle">🌙</button>
+
+        <!-- 💱 Currency Toggle -->
+        <select id="currencySelect" class="currency-toggle">
+          <option value="USD" selected>$ USD</option>
+          <option value="INR">₹ INR</option>
+        </select>
+      </div>
+
+      <!-- 🧾 Form -->
+      <form id="costForm" class="form-column" autocomplete="off">
+        <div class="input-group">
+          <label for="cpu">CPU Usage (%)</label>
+          <input id="cpu" type="number" placeholder="e.g., 75" required />
+        </div>
+
+        <div class="input-group">
+          <label for="memory">Memory Usage (GB)</label>
+          <input id="memory" type="number" placeholder="e.g., 64" required />
+        </div>
+
+        <div class="input-group">
+          <label for="storage">Storage (GB)</label>
+          <input id="storage" type="number" placeholder="e.g., 500" required />
+        </div>
+
+        <div class="input-group">
+          <label for="hours_used">Hours Used</label>
+          <input id="hours_used" type="number" placeholder="e.g., 120" required />
+        </div>
+
+        <div class="input-row">
+          <div class="input-group small">
+            <label for="instance_type">Instance Type</label>
+            <select id="instance_type">
+              <option>small</option>
+              <option>medium</option>
+              <option>large</option>
+            </select>
+          </div>
+
+          <div class="input-group small">
+            <label for="region">Region</label>
+            <select id="region">
+              <option>us-east</option>
+              <option>us-west</option>
+              <option>eu-west</option>
+              <option>ap-south</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group small">
+            <label for="usage_type">Usage Type</label>
+            <select id="usage_type">
+              <option>on-demand</option>
+              <option>reserved</option>
+              <option>spot</option>
+            </select>
+          </div>
+
+          <div class="input-group small">
+            <label for="storage_type">Storage Type</label>
+            <select id="storage_type">
+              <option>ssd</option>
+              <option>hdd</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="service_tier">Service Tier</label>
+          <select id="service_tier">
+            <option>standard</option>
+            <option>premium</option>
+          </select>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="main-btn">🔍 Estimate Cost</button>
+        </div>
+      </form>
+
+      <div class="result-row">
+        <h3>Estimated Cost: <span id="resultCost">$0.00</span></h3>
+      </div>
+
+      <div class="chart-card">
+        <canvas id="costChart"></canvas>
+      </div>
+
+      <div class="button-group">
+  <button id="backBtn" class="back-btn">⬅ Back to Dashboard</button>
+  <button id="downloadBtn" class="download-btn" style="display:none;">⬇️ Download CSV</button>
+  <button id="reportBtn" class="view-report-btn" style="display:none;">📊 View Report</button>
+</div>
+
+    </section>
+  </main>
+
+  <script src="cost_estimator.js"></script>
+</body>
+</html>

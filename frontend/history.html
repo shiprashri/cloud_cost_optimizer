@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📜 Estimation History</title>
+  <link rel="stylesheet" href="history.css" />
+</head>
+<body>
+  <div class="history-container">
+    <h1>📜 Estimation History</h1>
+
+    <div class="top-buttons">
+      <button id="theme-toggle" class="theme-toggle" title="Toggle Light/Dark Mode">🌙</button>
+      <button id="currency-toggle" class="currency-toggle" title="Switch Currency">💵 USD</button>
+      <button onclick="window.location.href='index.html'">⬅ Back to Dashboard</button>
+    </div>
+
+    <table id="historyTable">
+      <thead>
+        <tr>
+          <th>Date & Time</th>
+          <th>CPU (%)</th>
+          <th>Memory (GB)</th>
+          <th>Storage (GB)</th>
+          <th>Hours</th>
+          <th>Instance</th>
+          <th>Region</th>
+          <th>Usage</th>
+          <th>Service</th>
+          <th>Cost</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="btn-group">
+      <button id="clearHistoryBtn" class="clear-btn">🧹 Clear History</button>
+      <button id="backBtn" class="back-btn">⬅ Back</button>
+    </div>
+  </div>
+
+  <script src="history.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>☁️ Cloud Optimizer Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>☁️ Cloud Optimizer Dashboard</h1>
+
+    <!-- 🌗 Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" title="Toggle Light/Dark Mode">🌙</button>
+
+    <!-- 💰 Currency Toggle -->
+    <button id="currency-toggle" class="currency-toggle" title="Switch Currency">$ / ₹</button>
+  </header>
+
+  <main>
+    <!-- ✅ Summary Cards -->
+    <section class="summary-cards">
+      <div class="card clickable" id="totalRecordsCard">
+        <h3>Total Records</h3>
+        <p id="total-records">0</p>
+      </div>
+      <div class="card">
+        <h3>Average Cost</h3>
+        <p id="average-cost">--</p>
+      </div>
+      <div class="card">
+        <h3>Last Prediction</h3>
+        <p id="last-prediction">--</p>
+      </div>
+      <div class="card">
+        <h3>Average CPU</h3>
+        <p id="avg-cpu">--%</p>
+      </div>
+      <div class="card">
+        <h3>Average Memory</h3>
+        <p id="avg-memory">-- GB</p>
+      </div>
+      <div class="card">
+        <h3>Average Storage</h3>
+        <p id="avg-storage">-- GB</p>
+      </div>
+    </section>
+
+    <!-- ✅ Action Buttons -->
+    <section class="actions">
+      <button onclick="window.location.href='report.html'">View Reports</button>
+      <button onclick="window.location.href='cost_estimator.html'">Estimate Costs</button>
+    </section>
+
+    <!-- ✅ Optimization Insights -->
+    <section class="optimization-section">
+      <h2>⚙️ Cost Optimization Insights</h2>
+      <div class="opt-cards">
+        <div class="card"><h3>Recommended Region</h3><p id="best-region">--</p></div>
+        <div class="card"><h3>Optimal Instance Type</h3><p id="best-instance">--</p></div>
+        <div class="card"><h3>Efficiency Score</h3><p id="efficiency-score">--%</p></div>
+      </div>
+
+      <div class="suggestions-box" id="optimization-tips">
+        <h3>💡 Optimization Tips</h3>
+        <ul id="tips-list"><li>Analyzing usage patterns...</li></ul>
+      </div>
+    </section>
+
+    <!-- ✅ Chart Section -->
+    <section class="chart-section">
+      <h2>📊 Cost Trend Overview</h2>
+      <canvas id="costChart"></canvas>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>

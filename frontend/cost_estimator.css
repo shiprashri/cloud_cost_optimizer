@@ -1,0 +1,233 @@
+:root {
+  /* Light mode */
+  --bg-start: #58a6ff;
+  --bg-end: #68d8d6;
+  --card-bg: rgba(255, 255, 255, 0.94);
+  --accent: #28a745;
+  --accent-dark: #218838;
+  --muted: #f4f8fb;
+  --btn-blue: #007bff;
+  --btn-orange: #f39c12;
+  --text: #0b2540;
+  --radius: 14px;
+}
+
+/* 🌙 Dark mode overrides */
+body.dark-mode {
+  --bg-start: #0f172a;
+  --bg-end: #1e293b;
+  --card-bg: #1e293b;
+  --accent: #4ade80;
+  --accent-dark: #22c55e;
+  --muted: #334155;
+  --btn-blue: #6366f1;
+  --btn-orange: #f59e0b;
+  --text: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background: linear-gradient(120deg, var(--bg-start), var(--bg-end));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px 40px;
+  transition: background 0.4s ease, color 0.4s ease;
+  overflow-y: auto;
+}
+
+/* wrapper */
+.page-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* container */
+.container {
+  width: 420px;
+  max-width: 94%;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(10, 20, 40, 0.1);
+  padding: 28px;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+  margin-top: 60px; /* ensures top part is visible */
+}
+
+/* header */
+.header-row h1 {
+  margin: 0 0 6px 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 0 0 18px 0;
+  color: var(--text);
+  opacity: 0.8;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* form */
+.form-column {
+  display: block;
+}
+
+.input-group {
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+input[type=number],
+select {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  background: var(--muted);
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* row */
+.input-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.input-row .input-group {
+  flex: 1;
+}
+
+/* button */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.main-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(40, 160, 85, 0.12);
+  transition: background 0.3s ease;
+}
+.main-btn:hover {
+  background: var(--accent-dark);
+}
+
+/* result */
+.result-row {
+  margin-top: 18px;
+  text-align: center;
+}
+#resultCost {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* chart */
+.chart-card {
+  margin-top: 18px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 6px 18px rgba(10, 20, 40, 0.06);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+.chart-card canvas {
+  width: 100% !important;
+  height: 240px !important;
+  display: block;
+}
+
+/* buttons row */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+.back-btn,
+.view-report-btn {
+  flex: 1;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.back-btn {
+  background: var(--btn-orange);
+}
+.view-report-btn {
+  background: var(--btn-blue);
+}
+.back-btn:hover,
+.view-report-btn:hover {
+  filter: brightness(0.9);
+}
+
+/* responsive */
+@media (max-width: 640px) {
+  .container {
+    padding: 18px;
+  }
+  .input-row {
+    flex-direction: column;
+  }
+  .chart-card canvas {
+    height: 220px !important;
+  }
+}
+
+/* theme toggle */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  background: var(--card-bg);
+  color: var(--text);
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+.theme-toggle:hover {
+  transform: scale(1.1);
+}

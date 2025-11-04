@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📊 Cloud Usage Report</title>
+
+  <!-- Fonts and CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="report.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header-row">
+      <h1>📈 Cloud Usage Report</h1>
+      <button id="themeToggle" class="theme-toggle" title="Toggle Light/Dark Mode">🌙</button>
+    </div>
+
+    <div class="metrics">
+      <div class="card"><h3>CPU Usage</h3><p id="cpu">--%</p></div>
+      <div class="card"><h3>Memory Usage</h3><p id="memory">-- GB</p></div>
+      <div class="card"><h3>Storage Usage</h3><p id="storage">-- GB</p></div>
+      <div class="card"><h3>Estimated Cost</h3><p id="cost">$--</p></div>
+    </div>
+
+    <canvas id="reportChart" height="120"></canvas>
+
+    <div id="suggestions" class="suggestions"></div>
+
+    <button id="backBtn" class="main-btn">⬅ Back to Dashboard</button>
+  </div>
+
+  <script src="report.js"></script>
+</body>
+</html>
+
