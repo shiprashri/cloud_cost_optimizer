@@ -16,3 +16,4 @@ Open `frontend/index.html` in your browser (or serve via a static server).
 ## Notes
 - `model.py` currently contains dummy functions. Replace with real model logic later.
 # cloud_cost_optimizer
+# cloud_project
