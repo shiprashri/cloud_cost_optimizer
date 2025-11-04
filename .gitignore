@@ -1,0 +1,9 @@
+backend/model/rf_model.joblib
+backend/cost_model.pkl
+backend/scaler.pkl
+backend/label_encoders.pkl
+backend/data.db
+backend/optimizer.db
+__pycache__/
+*.pkl
+*.db
